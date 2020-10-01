@@ -11,11 +11,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("ru.itis.maletskov.book.controller"))
+                .apis(RequestHandlerSelectors.basePackage("ru.itis.maletskov.cassandra.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

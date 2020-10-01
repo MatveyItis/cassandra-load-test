@@ -1,14 +1,17 @@
 server:
-  port: 10001
+  port: 8080
 
 spring:
   main:
     allow-bean-definition-overriding: true
   data:
     cassandra:
-      contact-points:
+      contact-points: 172.31.79.226,172.31.91.44,172.31.94.106
       cluster-name: Test Cluster
-
+      port: 9042
+      keyspace-name: book-space
+      password: cassandra
+      username: cassandra
 
 logging:
   level:
