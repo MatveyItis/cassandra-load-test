@@ -27,7 +27,6 @@ management:
     metrics:
       enabled: true
   metrics:
-    enable: true
     export:
       jmx:
         enabled: true
