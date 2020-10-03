@@ -18,3 +18,16 @@ logging:
     ROOT: INFO
     org.springframework.web: DEBUG
 
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: *
+  endpoint:
+    metrics:
+      enabled: true
+  metrics:
+    enable: true
+    export:
+      jmx:
+        enabled: true
