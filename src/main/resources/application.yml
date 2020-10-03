@@ -22,7 +22,7 @@ management:
   endpoints:
     jmx:
       exposure:
-        include: *
+        include: '*'
   endpoint:
     metrics:
       enabled: true
