@@ -1,6 +1,5 @@
 package ru.itis.maletskov.cassandra.entity;
 
-import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,9 +13,7 @@ import org.springframework.data.cassandra.core.mapping.Table;
 public class Department {
 
     @PrimaryKey
-    private UUID id;
-
-    private String deptName;
+    private IdAndDeptNameKey primaryKey;
 
     private String name;
 }

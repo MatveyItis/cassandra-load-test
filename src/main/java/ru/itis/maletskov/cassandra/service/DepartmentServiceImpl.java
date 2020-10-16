@@ -9,6 +9,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
 import ru.itis.maletskov.cassandra.api.DepartmentService;
 import ru.itis.maletskov.cassandra.entity.Department;
+import ru.itis.maletskov.cassandra.entity.IdAndDeptNameKey;
 import ru.itis.maletskov.cassandra.repository.DepartmentRepository;
 
 @Slf4j
@@ -23,9 +24,11 @@ public class DepartmentServiceImpl implements DepartmentService {
         List<Department> departments = new ArrayList<>();
         for (int i = 0; i < batchSize; i++) {
             departments.add(Department.builder()
-                    .id(UUID.randomUUID())
-                    .deptName(RandomStringUtils.random(20, true, false))
-                    .name(RandomStringUtils.random(10, true, false))
+                    .primaryKey(IdAndDeptNameKey.builder()
+                            .id(UUID.randomUUID())
+                            .deptName(RandomStringUtils.random(20, true, false))
+                            .build())
+                    .name(RandomStringUtils.random(15, true, false))
                     .build());
         }
         departmentRepository.saveAll(departments);
