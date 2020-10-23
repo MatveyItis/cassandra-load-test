@@ -12,7 +12,7 @@ spring:
       keyspace-name: books
       password: cassandra
       username: cassandra
-      consistency-level: local_quorum
+      consistency-level: any
 
 logging:
   level:
